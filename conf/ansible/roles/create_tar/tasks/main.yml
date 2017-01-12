@@ -1,0 +1,12 @@
+- name: Fill fake-vtj.properties
+  template: src={{ tempdir }}/service.properties.template dest={{ tempdir }}/filled/fake-vtj.properties
+
+- name: Fill services.json
+  template: src={{ tempdir }}/services.json.template dest={{ tempdir }}/filled/services.json
+
+- name: Copy keystore
+  local_action: copy src={{ confdir }}/client.p12 dest={{ tempdir }}/filled/client.p12
+
+- name: Create filled template tar
+  local_action: shell tar -C {{ tempdir }}/filled/ -zvcf {{ tempdir }}/filled_templates.tgz .
+  delegate_to: localhost

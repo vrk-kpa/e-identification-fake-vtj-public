@@ -1,0 +1,12 @@
+{
+  "name": "file_upload",
+  "version": "0.0.1",
+  "dependencies": {
+    "http-proxy": "~1.11",
+    "express": "~4.10.2",
+    "properties-reader": "0.0.10",
+    "pem": "1.8.3",
+    "sync-exec": "^0.6.2",
+    "body-parser": "1.15.2"
+  }
+}
