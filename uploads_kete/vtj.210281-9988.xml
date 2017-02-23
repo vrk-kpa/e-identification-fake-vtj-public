@@ -1,0 +1,109 @@
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+   <s:Header>
+      <h:client a:objectType="SUBSYSTEM" xmlns="http://x-road.eu/xsd/xroad.xsd" xmlns:a="http://x-road.eu/xsd/identifiers" xmlns:h="http://x-road.eu/xsd/xroad.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         <a:xRoadInstance>FI-DEV</a:xRoadInstance>
+         <a:memberClass>COM</a:memberClass>
+         <a:memberCode>1516651-3</a:memberCode>
+         <a:subsystemCode>kapatunnistus</a:subsystemCode>
+      </h:client>
+      <h:id xmlns="http://x-road.eu/xsd/xroad.xsd" xmlns:h="http://x-road.eu/xsd/xroad.xsd">ID11234</h:id>
+      <h:issue xmlns="http://x-road.eu/xsd/xroad.xsd" xmlns:h="http://x-road.eu/xsd/xroad.xsd"/>
+      <h:protocolVersion xmlns="http://x-road.eu/xsd/xroad.xsd" xmlns:h="http://x-road.eu/xsd/xroad.xsd"/>
+      <h:service a:objectType="SERVICE" xmlns="http://x-road.eu/xsd/xroad.xsd" xmlns:a="http://x-road.eu/xsd/identifiers" xmlns:h="http://x-road.eu/xsd/xroad.xsd">
+         <a:xRoadInstance>FI-DEV</a:xRoadInstance>
+         <a:memberClass>GOV</a:memberClass>
+         <a:memberCode>0245437-2</a:memberCode>
+         <a:subsystemCode>VTJService</a:subsystemCode>
+         <a:serviceCode>HenkilonTunnusKysely</a:serviceCode>
+         <a:serviceVersion>v1</a:serviceVersion>
+      </h:service>
+      <h:userId xmlns="http://x-road.eu/xsd/xroad.xsd" xmlns:h="http://x-road.eu/xsd/xroad.xsd">tunnistus</h:userId>
+      <ns2:requestHash algorithmId="http://www.w3.org/2001/04/xmlenc#sha512" xmlns:ns2="http://x-road.eu/xsd/xroad.xsd">vgKYXOUqhlyDyIfv2VFNaMhIg2KGudLLTbkrC6RY5zqtGlKfMTNg5z1Q4mDfHOktbgc0+ce5OhPEbDlrmVRGaA==</ns2:requestHash>
+   </s:Header>
+   <s:Body xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <HenkilonTunnusKyselyResponse xmlns="http://xml.vrk.fi/ws/vtj/vtjkysely/1">
+         <request>
+            <SoSoNimi>PERUSJHHS3</SoSoNimi>
+            <Kayttajatunnus>S020427</Kayttajatunnus>
+            <Salasana/>
+            <Loppukayttaja>petsu1</Loppukayttaja>
+            <Laskutustiedot/>
+            <Henkilotunnus>210281-9988</Henkilotunnus>
+            <SahkoinenAsiointitunnus/>
+            <VarmenteenMyontaja>VRK CA for Test Purposes</VarmenteenMyontaja>
+            <X509Certificate/>
+            <VarmenteenVoimassaolotarkistus>1</VarmenteenVoimassaolotarkistus>
+            <VarmenteenSulkulistatarkistus>1</VarmenteenSulkulistatarkistus>
+            <Tunnistusportaali/>
+            <Vara1/>
+         </request>
+         <response>
+            <VTJHenkiloVastaussanoma sanomatunnus="PERUSJHHS3" tietojenPoimintaaika="20160108105604" versio="1.0" xsi:schemaLocation="http://xml.vrk.fi/schema/vtjkysely PERUSJHHS3.xsd" xmlns="http://xml.vrk.fi/schema/vtjkysely" xmlns:vtj="http://xml.vrk.fi/schema/vtj/henkilotiedot/1">
+               <Asiakasinfo>
+                  <InfoS>08.01.2016 10:56</InfoS>
+                  <InfoR>08.01.2016 10:56</InfoR>
+                  <InfoE>08.01.2016 10:56</InfoE>
+               </Asiakasinfo>
+               <Paluukoodi koodi="0000">Haku onnistui</Paluukoodi>
+               <Hakuperusteet>
+                  <Henkilotunnus hakuperustePaluukoodi="1" hakuperusteTekstiE="Found" hakuperusteTekstiR="Hittades" hakuperusteTekstiS="Löytyi">210281-9988</Henkilotunnus>
+                  <SahkoinenAsiointitunnus hakuperustePaluukoodi="4" hakuperusteTekstiE="Not used" hakuperusteTekstiR="Beteckningen har inte användat" hakuperusteTekstiS="Tunnushakuperustetta ei ole kaytetty"/>
+               </Hakuperusteet>
+               <Henkilo>
+                  <Henkilotunnus voimassaolokoodi="1">210281-9988</Henkilotunnus>
+                  <NykyinenSukunimi>
+                     <Sukunimi>Testaaja</Sukunimi>
+                  </NykyinenSukunimi>
+                  <NykyisetEtunimet>
+                     <Etunimet>Portaalia Nordea</Etunimet>
+                  </NykyisetEtunimet>
+                  <NykyinenKutsumanimi>
+                     <Kutsumanimi>Nordea</Kutsumanimi>
+                  </NykyinenKutsumanimi>
+                  <VakinainenKotimainenLahiosoite>
+                     <LahiosoiteS>Nordeatie 2</LahiosoiteS>
+                     <LahiosoiteR>Nordeaväg 2</LahiosoiteR>
+                     <Postinumero>00120</Postinumero>
+                     <PostitoimipaikkaS>Helsinki</PostitoimipaikkaS>
+                     <PostitoimipaikkaR>Helsingfors</PostitoimipaikkaR>
+                     <AsuminenAlkupvm>20160312</AsuminenAlkupvm>
+                     <AsuminenLoppupvm/>
+                  </VakinainenKotimainenLahiosoite>
+                  <VakinainenUlkomainenLahiosoite>
+                     <UlkomainenLahiosoite/>
+                     <UlkomainenPaikkakuntaJaValtioS/>
+                     <UlkomainenPaikkakuntaJaValtioR/>
+                     <UlkomainenPaikkakuntaJaValtioSelvakielinen/>
+                     <Valtiokoodi3/>
+                     <AsuminenAlkupvm/>
+                     <AsuminenLoppupvm/>
+                  </VakinainenUlkomainenLahiosoite>
+                  <Kotikunta>
+                     <Kuntanumero>019</Kuntanumero>
+                     <KuntaS>Helsinki</KuntaS>
+                     <KuntaR>helsingfors</KuntaR>
+                     <KuntasuhdeAlkupvm>20040311</KuntasuhdeAlkupvm>
+                  </Kotikunta>
+                  <Kuolintiedot>
+                     <Kuollut/>
+                     <Kuolinpvm/>
+                  </Kuolintiedot>
+                  <Kuolleeksijulistamistiedot>
+                     <Kuolleeksijulistamispvm/>
+                  </Kuolleeksijulistamistiedot>
+                  <Aidinkieli>
+                     <Kielikoodi>fi</Kielikoodi>
+                     <KieliS>suomi</KieliS>
+                     <KieliR>finska</KieliR>
+                     <KieliSelvakielinen/>
+                  </Aidinkieli>
+                  <SuomenKansalaisuusTietokoodi>1</SuomenKansalaisuusTietokoodi>
+                  <Turvakielto>
+                     <TurvakieltoTieto/>
+                  </Turvakielto>
+               </Henkilo>
+            </VTJHenkiloVastaussanoma>
+         </response>
+      </HenkilonTunnusKyselyResponse>
+   </s:Body>
+</s:Envelope>

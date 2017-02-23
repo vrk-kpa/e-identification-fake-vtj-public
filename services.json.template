@@ -1,0 +1,18 @@
+{
+"static": {"container": "{{ static_container_name }}", "image": "{{ static_imagename }}" },
+"metadata_db": {"container": "{{ metadata_db_container_name }}" },
+"int_router": {"container": "{{ int_router_container_name }}", "image": "{{ int_router_imagename }}" },
+"ext_router": {"container": "{{ ext_router_container_name }}", "image": "{{ ext_router_imagename }}" },
+"hst_router": {"container": "{{ hst_router_container_name }}", "image": "{{ hst_router_imagename }}" },
+"metadata": {"container": "{{ metadata_container_name }}", "image": "{{ metadata_imagename }}" },
+"proxy": {"container": "{{ proxy_container_name }}", "image": "{{ proxy_imagename }}" },
+"sp": {"container": "{{ sp_container_name }}", "image": "{{ sp_imagename }}" },
+"idp": {"container": "{{ idp_container_name }}", "image": "{{ idp_imagename }}" },
+"tupasidp": {"container": "{{ integration_idp_container_name }}", "image": "{{ integration_idp_imagename }}" },
+"vtj": {"container": "{{ vtj_container_name }}", "image": "{{ vtj_imagename }}" },
+"fake_vtj": {"container": "{{ fake_vtj_container_name }}", "image": "{{ fake_vtj_imagename }}" },
+"hst": {"container": "{{ hst_container_name }}", "image": "{{ hst_imagename }}" },
+"feedback": {"container": "{{ feedback_container_name }}", "image": "{{ feedback_imagename }}" },
+"localisation": {"container": "{{ localisation_container_name }}", "image": "{{ localisation_imagename }}" },
+"sema": {"container": "{{ sema_container_name }}", "image": "{{ sema_imagename }}" }
+}

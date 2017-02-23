@@ -1,0 +1,3 @@
+xroad_endpoint={{ fake_vtj_xroad_endpoint }}
+p12Password={{ xroad_connectivity_keystore_pw }}
+env={{ env }}

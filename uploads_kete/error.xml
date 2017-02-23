@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+	<s:Header>
+		<h:client xmlns="http://x-road.eu/xsd/sdsb.xsd" xmlns:a="http://x-road.eu/xsd/identifiers"
+			xmlns:h="http://x-road.eu/xsd/sdsb.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" a:objectType="SUBSYSTEM">
+			<a:sdsbInstance>FI-DEV</a:sdsbInstance>
+			<a:memberClass>COM</a:memberClass>
+			<a:memberCode>1111111-1</a:memberCode>
+			<a:subsystemCode>e-identification</a:subsystemCode>
+		</h:client>
+		<h:id xmlns="http://x-road.eu/xsd/sdsb.xsd" xmlns:h="http://x-road.eu/xsd/sdsb.xsd">33333-33333-33333-33333-3333
+		</h:id>
+		<h:issue xmlns="http://x-road.eu/xsd/sdsb.xsd" xmlns:h="http://x-road.eu/xsd/sdsb.xsd">ID111111
+		</h:issue>
+		<h:service xmlns="http://x-road.eu/xsd/sdsb.xsd" xmlns:a="http://x-road.eu/xsd/identifiers"
+			xmlns:h="http://x-road.eu/xsd/sdsb.xsd" a:objectType="SERVICE">
+			<a:sdsbInstance>FI-DEV</a:sdsbInstance>
+			<a:memberClass>GOV</a:memberClass>
+			<a:memberCode>1111111-1</a:memberCode>
+			<a:subsystemCode>VTJService</a:subsystemCode>
+			<a:serviceCode>HenkilonTunnusKysely</a:serviceCode>
+		</h:service>
+		<h:userId xmlns="http://x-road.eu/xsd/sdsb.xsd" xmlns:h="http://x-road.eu/xsd/sdsb.xsd">EE1010101001
+		</h:userId>
+		<ns2:requestHash xmlns:ns2="http://x-road.eu/xsd/sdsb.xsd"
+			algorithmId="http://www.w3.org/2001/04/xmlenc#sha512">jhfus8g98dububust8ib09fs90bisfdg9i0ds90g==
+		</ns2:requestHash>
+	</s:Header>
+	<s:Body xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<HenkilonTunnusKyselyResponse xmlns="http://xml.vrk.fi/ws/vtj/vtjkysely/1">
+			<request>
+				<SoSoNimi>soso</SoSoNimi>
+				<Kayttajatunnus>S0111111</Kayttajatunnus>
+				<Salasana />
+				<Loppukayttaja>EE1010101001</Loppukayttaja>
+				<Henkilotunnus></Henkilotunnus>
+			</request>
+			<response>
+				<faultCode>0001</faultCode>
+				<faultString>Hakuperusteella ei löydy tietoja vtj:stä</faultString>
+			</response>
+		</HenkilonTunnusKyselyResponse>
+	</s:Body>
+</s:Envelope>
