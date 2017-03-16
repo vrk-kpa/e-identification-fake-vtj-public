@@ -52,4 +52,5 @@ RUN npm install
 EXPOSE 8080
 CMD forever start -o /data00/logs/fake-registry.log -e /data00/logs/fake-registry.log -a --uid fake-registry app.js 8080 && \
     forever start -o /data00/logs/fake-registry2.log -e /data00/logs/fake-registry2.log -a --uid fake-registry2 app.js 8081 && \
+    forever start -o /data00/logs/controller.log -e /data00/logs/controller.log -a --uid controller controller.js 8082 && \
     tail -f /etc/hosts
