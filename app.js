@@ -87,17 +87,26 @@ var requestVTJ = function(response, url, content, VTJOptions) {
 
 }
 
+var writeNotFoundErrorResponse = function(res) {
+    fs.readFile("error.xml", "binary", function(err, file) {
+        var headers = {};
+        headers["Content-Type"] = "text/xml; charset=utf-8";
+        res.writeHead(200, headers);
+        res.write(file, "binary");
+        res.end();
+    });
+}
 
 app.use(bodyParser.raw({inflate: "true", type: "*/*"}));
 app.post('/', function (req, res) {
     if (state === "error") {
         console.log("Sending error");
-        response.statusCode = 404;
-        response.end("Error as requested");
+        res.statusCode = 404;
+        res.end("Error as requested");
         return;
     } else if (state === "proxy") {
         console.log("Proxying");
-        requestVTJ(response, request.url, requestMsg, VTJOptions);
+        requestVTJ(res, request.url, requestMsg, VTJOptions);
         return;
     } else {
         var dataStr = req.body.toString();
@@ -107,28 +116,18 @@ app.post('/', function (req, res) {
             console.log("found file: " + filename);
             fs.readFile(filename, "binary", function(err, file) {
                 if (err) {
-                    filename = "error.xml";
-                    fs.readFile(filename, "binary", function(err, file) {
-                        var headers = {};
-                        headers["Content-Type"] = "text/xml";
-                        response.writeHead(200, headers);
-                        response.write(file, "binary");
-                        response.end();
-                        return;
-                    });
+                	writeNotFoundErrorResponse(res);
                     return;
                 }
-
-            var headers = {};
-            var contentType = contentTypesByExtension[path.extname(filename)];
-            if (contentType) headers["Content-Type"] = contentType;
-            res.writeHead(200, headers);
-            res.write(file, "binary");
-            res.end();
-        });
+                var headers = {};
+                var contentType = contentTypesByExtension[path.extname(filename)];
+                if (contentType) headers["Content-Type"] = contentType;
+                res.writeHead(200, headers);
+                res.write(file, "binary");
+                res.end();
+            });
         } else {
-            console.log("req body " + dataStr + " resolved to filename " + filename + ", result: not found");
-            res.status(404).send("not found");
+            writeNotFoundErrorResponse(res);
             return;
         }
     }
