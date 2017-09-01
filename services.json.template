@@ -8,7 +8,7 @@
 "proxy": {"container": "{{ proxy_container_name }}", "image": "{{ proxy_imagename }}" },
 "sp": {"container": "{{ sp_container_name }}", "image": "{{ sp_imagename }}" },
 "idp": {"container": "{{ idp_container_name }}", "image": "{{ idp_imagename }}" },
-"tupasidp": {"container": "{{ integration_idp_container_name }}", "image": "{{ integration_idp_imagename }}" },
+"tupasidp": {"container": "{{ tupas_idp_container_name }}", "image": "{{ tupas_idp_imagename }}" },
 "vtj": {"container": "{{ vtj_container_name }}", "image": "{{ vtj_imagename }}" },
 "fake_vtj": {"container": "{{ fake_vtj_container_name }}", "image": "{{ fake_vtj_imagename }}" },
 "hst": {"container": "{{ hst_container_name }}", "image": "{{ hst_imagename }}" },
