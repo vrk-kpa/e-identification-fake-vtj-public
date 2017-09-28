@@ -13,6 +13,5 @@
 "fake_vtj": {"container": "{{ fake_vtj_container_name }}", "image": "{{ fake_vtj_imagename }}" },
 "hst": {"container": "{{ hst_container_name }}", "image": "{{ hst_imagename }}" },
 "feedback": {"container": "{{ feedback_container_name }}", "image": "{{ feedback_imagename }}" },
-"localisation": {"container": "{{ localisation_container_name }}", "image": "{{ localisation_imagename }}" },
-"sema": {"container": "{{ sema_container_name }}", "image": "{{ sema_imagename }}" }
+"localisation": {"container": "{{ localisation_container_name }}", "image": "{{ localisation_imagename }}" }
 }
