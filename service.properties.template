@@ -1,3 +1,5 @@
 xroad_endpoint={{ fake_vtj_xroad_endpoint }}
 p12Password={{ xroad_connectivity_keystore_pw }}
+8080_state={{ fake_vtj_8080_state | default('serve') }}
+8081_state={{ fake_vtj_8081_state | default('serve') }}
 env={{ env }}

@@ -41,7 +41,25 @@ try {
 } catch (err) {
     console.log('Unable to parse config file: ' + err);
 }
-console.log("xroad endpoint: " + VTJOptions.xroadhost + ":" + VTJOptions.xroadport);
+console.log("X-road security server endpoint: " + VTJOptions.xroadhost + ":" + VTJOptions.xroadport);
+
+try {
+    var props = pr('/opt/fake-vtj-properties/fake-vtj.properties');
+    var state_props = props.get(port +'_state');
+    if ( state_props.length === 0 ) {
+        state = "serve";
+    } else if (state_props === "proxy" ) {
+	state = "proxy";
+    } else if (state_props === "serve" ) {
+        state = "serve";
+    } else if (state_props === "error" ) {
+        state = "error";
+    }	
+} catch (err) {
+    console.log('Unable to parse config file: ' + err);
+	state = "serve";
+}
+console.log("State is %s at port %s (proxy/error/serve).", state, port);
 
 pem.readPkcs12("/data00/deploy/client.p12", VTJOptions,
     function(e, certs) {
@@ -106,7 +124,7 @@ app.post('/', function (req, res) {
         return;
     } else if (state === "proxy") {
         console.log("Proxying");
-        requestVTJ(res, request.url, requestMsg, VTJOptions);
+        requestVTJ(res, "/", req.body.toString(), VTJOptions);
         return;
     } else {
         var dataStr = req.body.toString();
@@ -160,18 +178,23 @@ app.get('/api/help', function (req, res) {
 app.get('/api/fake-vtj', function (req, res) {
 	console.log( req.query );
 	if ( Object.keys(req.query).length === 0 ) {
+		console.log("State is %s at port %s (proxy/error/serve).", state, port);
 		res.write( JSON.stringify({ state: state }) );
-	    res.end();		
+	    res.end();
+		
 	} else if (req.query.state === "proxy" ) {
 		state = "proxy";
+		console.log("State is %s at port %s (proxy/error/serve).", state, port);
 		res.write(state);
 	    res.end();
 	} else if (req.query.state === "serve" ) {
 		state = "serve";
+		console.log("State is %s at port %s (proxy/error/serve).", state, port);
 		res.write(state);
 	    res.end();
 	} else if (req.query.state === "error" ) {
 		state = "error";
+		console.log("State is %s at port %s (proxy/error/serve).", state, port);
 		res.write(state);
 	    res.end();
 	} else {
@@ -223,8 +246,5 @@ for (var i = 0; i < serviceList.length; i++) {
 var server = app.listen(port, "0.0.0.0", function () {
    var host = server.address().address
    var port = server.address().port
-
-   console.log("Example app listening at http://%s:%s", host, port)
+   console.log("Fake-VTJ app listening at http://%s:%s", host, port)
 })
-
-console.log("server running at\n  => http://localhost:" + port);

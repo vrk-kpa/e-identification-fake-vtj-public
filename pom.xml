@@ -10,7 +10,7 @@
     <name>e-identification-fake-vtj</name>
 
     <properties>
-        <docker.image.prefix>dev-docker-registry.kapa.ware.fi</docker.image.prefix>
+        <docker.image.prefix>e-identification-docker-virtual.vrk-artifactory-01.eden.csc.fi</docker.image.prefix>
         <spotify-docker.version>0.3.1</spotify-docker.version>
     </properties>
 

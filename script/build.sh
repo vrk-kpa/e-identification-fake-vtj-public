@@ -57,9 +57,9 @@ done
 cd ${SCRIPTPATH}/..
 
 # Pull the base image
-docker pull dev-docker-registry.kapa.ware.fi/e-identification-base-node
+docker pull e-identification-docker-virtual.vrk-artifactory-01.eden.csc.fi/e-identification-base-node
 
-IMAGE_NAME=dev-docker-registry.kapa.ware.fi/e-identification-fake-vtj:${TARGET_ENV}
+IMAGE_NAME=e-identification-docker-virtual.vrk-artifactory-01.eden.csc.fi/e-identification-fake-vtj:${TARGET_ENV}
 
 #build, tag and push docker image
 
