@@ -16,7 +16,7 @@ RUN apt-get -y update && apt-get -y upgrade && \
     sudo apt-get -y update && \
     sudo apt-get install -y docker-engine && \
     cd /usr/local && \
-    curl https://nodejs.org/dist/v4.6.2/node-v4.6.2-linux-x64.tar.gz | tar --strip-components=1 -zxf- && cd && \
+    curl https://nodejs.org/dist/v12.14.0/node-v12.14.0-linux-x64.tar.gz | tar --strip-components=1 -zxf- && cd && \
     npm install -g forever && \
     npm install -g gulp
 
