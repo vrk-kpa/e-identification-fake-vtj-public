@@ -2,7 +2,7 @@
   "name": "file_upload",
   "version": "0.0.1",
   "dependencies": {
-    "http-proxy": "~1.11",
+    "http-proxy": "~1.18",
     "express": "~4.10.2",
     "properties-reader": "0.0.10",
     "pem": "1.14.3",
